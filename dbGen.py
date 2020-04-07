@@ -1,0 +1,8 @@
+dbCon=open('dbConnect.php','w')
+dbServer = input('Enter the Database Server URL : ')
+dbName = input('Enter the Database Name : ')
+dbUser = input('Enter the Username : ')
+dbPser = input('Enter the Database Password : ')
+dbCon.write(dbServer)
+dbCon.write(dbServer)
+dbCon.write(dbServer)
