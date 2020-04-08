@@ -13,7 +13,7 @@ if format=='js':
     dbCon.write("var con = mysql.createConnection({\n")
     host="host: " + dbServer + ",\n"
     dbCon.write(host)
-    dbUser="user: " + dbName + ",\n"
+    dbUser="user: " + dbUser + ",\n"
     dbCon.write(dbUser)
     dbPswd="passsword: " + dbPswd + ",\n"
     dbCon.write(dbPswd)
@@ -22,3 +22,20 @@ if format=='js':
     dbCon.write("if(err) throw err;\n")
     dbCon.write("console.log('Connected')\n")
     dbCon.write("});")
+if format=='php':
+    dbCon = open(r'dbConnect.','w')
+    dbCon.write("<php\n")
+    host="$servername " + dbServer + ",\n"
+    dbCon.write(host)
+    dbUser="$username " + dbUser + ",\n"
+    dbCon.write(dbUser)
+    dbName="$dbname " + dbName + ",\n"
+    dbCon.write(dbName)
+    dbPswd="$passsword= " + dbPswd + ",\n"
+    dbCon.write(dbPswd)
+    dbCon.write("$connb=new mysqli($servername,$username,$passsword,$dbname)\n")
+    dbCon.write("if ($conn->connect_error) {\n")
+    dbCon.write(" die('Connection failed: '' . $conn->connect_error);\n")
+    dbCon.write("}\n")
+    dbCon.write("echo 'Connected Successfully'\n?>")
+print("The Connection file has been generated Successfully")
