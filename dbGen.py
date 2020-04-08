@@ -7,6 +7,7 @@ dbServer = input('Enter the Database Server URL : ')
 dbName = input('Enter the Database Name : ')
 dbUser = input('Enter the Username : ')
 dbPswd = input('Enter the Database Password : ')
+flag=0
 if format=='js':
     dbCon = open(r'dbConnect.js','w')
     dbCon.write("var mysql = require('mysql')\n")
@@ -22,6 +23,7 @@ if format=='js':
     dbCon.write("if(err) throw err;\n")
     dbCon.write("console.log('Connected')\n")
     dbCon.write("});")
+    flag=1
 if format=='php':
     dbCon = open(r'dbConnect.php','w')
     dbCon.write("<?php\n")
@@ -38,4 +40,8 @@ if format=='php':
     dbCon.write(" die('Connection failed: ' . $conn->connect_error);\n")
     dbCon.write("}\n")
     dbCon.write("echo 'Connected Successfully';\n?>")
-print("The Connection file has been generated Successfully")
+    flag=1
+if flag==1:
+    print("The Connection file has been generated Successfully")
+else:
+    print("File generation failed")
