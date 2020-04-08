@@ -23,19 +23,19 @@ if format=='js':
     dbCon.write("console.log('Connected')\n")
     dbCon.write("});")
 if format=='php':
-    dbCon = open(r'dbConnect.','w')
-    dbCon.write("<php\n")
-    host="$servername " + dbServer + ",\n"
+    dbCon = open(r'dbConnect.php','w')
+    dbCon.write("<?php\n")
+    host="$servername = '" + dbServer + "';\n"
     dbCon.write(host)
-    dbUser="$username " + dbUser + ",\n"
+    dbUser="$username = '" + dbUser + "';\n"
     dbCon.write(dbUser)
-    dbName="$dbname " + dbName + ",\n"
+    dbName="$dbname = '" + dbName + "';\n"
     dbCon.write(dbName)
-    dbPswd="$passsword= " + dbPswd + ",\n"
+    dbPswd="$passsword = '" + dbPswd + "';\n"
     dbCon.write(dbPswd)
-    dbCon.write("$connb=new mysqli($servername,$username,$passsword,$dbname)\n")
+    dbCon.write("$conn = new mysqli($servername,$username,$passsword,$dbname);\n")
     dbCon.write("if ($conn->connect_error) {\n")
-    dbCon.write(" die('Connection failed: '' . $conn->connect_error);\n")
+    dbCon.write(" die('Connection failed: ' . $conn->connect_error);\n")
     dbCon.write("}\n")
-    dbCon.write("echo 'Connected Successfully'\n?>")
+    dbCon.write("echo 'Connected Successfully';\n?>")
 print("The Connection file has been generated Successfully")
