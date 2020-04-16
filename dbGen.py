@@ -1,7 +1,7 @@
 #dbGen.py : Easy way to generate Database connection file for your project
 #author : Samartha
 
-format = input('Input extension of DBConnect file (js/php/java) : ')
+format = input('Input extension of DBConnect file (js/php) : ')
 platform = input('Input Database provider (mysql/oracle) :  ')
 dbServer = input('Enter the Database Server URL : ')
 dbName = input('Enter the Database Name : ')
@@ -24,7 +24,7 @@ if format=='js':
     dbCon.write("console.log('Connected')\n")
     dbCon.write("});")
     flag=1
-if format=='php':
+elif format=='php':
     dbCon = open(r'dbConnect.php','w')
     dbCon.write("<?php\n")
     host="$servername = '" + dbServer + "';\n"
