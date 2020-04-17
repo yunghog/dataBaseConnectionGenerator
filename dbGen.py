@@ -7,11 +7,11 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
         dbCon = open(r'dbConnect.js','w')
         dbCon.write("var mysql = require('mysql')\n")
         dbCon.write("var con = mysql.createConnection({\n")
-        host="host: " + dbServer + ",\n"
+        host="host: \"" + dbServer + "\",\n"
         dbCon.write(host)
-        dbUser="user: " + dbUser + ",\n"
+        dbUser="user: \"" + dbUser + "\",\n"
         dbCon.write(dbUser)
-        dbPswd="passsword: " + dbPswd + ",\n"
+        dbPswd="passsword: \"" + dbPswd + "\",\n"
         dbCon.write(dbPswd)
         dbCon.write("})")
         dbCon.write("con.connect(function(err)){\n")

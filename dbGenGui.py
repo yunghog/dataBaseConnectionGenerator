@@ -137,8 +137,8 @@ class Ui_DBConnectionGen(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.extention.setItemText(0, _translate("DBConnectionGen", ".js"))
-        self.extention.setItemText(1, _translate("DBConnectionGen", ".php"))
+        self.extention.setItemText(0, _translate("DBConnectionGen", "js"))
+        self.extention.setItemText(1, _translate("DBConnectionGen", "php"))
         self.label_3.setText(_translate("DBConnectionGen", "Username"))
         self.label_6.setText(_translate("DBConnectionGen", "Database"))
         self.label_2.setText(_translate("DBConnectionGen", "Server"))
@@ -152,12 +152,12 @@ class Ui_DBConnectionGen(object):
     def dbConPreview(self):
         self.preview_text.setText(d.uiPrev())
     def dbGenUi(self):
-        #format = self.extention.text()
+        format = self.extention.currentText()
         dbServer = self.server.text()
         dbName = self.database.text()
         dbUser = self.username.text()
         dbPswd = self.password.text()
-        self.preview_text.setText(d.gen('php',dbServer,dbName,dbPswd,dbName))
+        self.preview_text.setText(d.gen(format,dbServer,dbName,dbPswd,dbName))
 
 if __name__ == "__main__":
     import sys
