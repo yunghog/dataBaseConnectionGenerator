@@ -5,7 +5,7 @@
 # Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import dbGen as d
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_DBConnectionGen(object):
@@ -88,7 +88,7 @@ class Ui_DBConnectionGen(object):
         self.generate.setFlat(False)
         self.generate.setObjectName("generate")
         self.gridLayout.addWidget(self.generate, 5, 0, 1, 1)
-        self.generate.clicked.connect(self.changetext)
+        self.generate.clicked.connect(self.dbGenUi)
         self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Bebas")
@@ -110,6 +110,7 @@ class Ui_DBConnectionGen(object):
         self.preview.setSizePolicy(sizePolicy)
         self.preview.setObjectName("preview")
         self.gridLayout.addWidget(self.preview, 5, 1, 1, 1)
+        self.preview.clicked.connect(self.dbConPreview)
         self.label_4 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Bebas")
@@ -148,6 +149,15 @@ class Ui_DBConnectionGen(object):
 
     def changetext(self):
         self.label.setText('hello')
+    def dbConPreview(self):
+        self.preview_text.setText(d.uiPrev())
+    def dbGenUi(self):
+        #format = self.extention.text()
+        dbServer = self.server.text()
+        dbName = self.database.text()
+        dbUser = self.username.text()
+        dbPswd = self.password.text()
+        self.preview_text.setText(d.gen('php',dbServer,dbName,dbPswd,dbName))
 
 if __name__ == "__main__":
     import sys

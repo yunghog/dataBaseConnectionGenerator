@@ -40,3 +40,6 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
         return 'Success'
     else:
         return 'Failed'
+def uiPrev():
+    conFile=open('dbConnect.php','r')
+    return conFile.read()
