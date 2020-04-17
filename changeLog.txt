@@ -1,0 +1,5 @@
+# dataBaseConnectionGenerator v1.0
+  - generate dbConnection using cli script
+  - graphical use interface for easy interaction
+  - preview button to open the generated script instantly
+  - raise exception for invalid input

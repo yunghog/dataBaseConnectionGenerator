@@ -64,7 +64,13 @@ python dbGenGui.py
 - Fill the fields and hit `generate` button to generate DBConnection
 
 ## ChangeLog
-- this section will be updated soon
+```shell
+  # dataBaseConnectionGenerator v1.0
+  - generate dbConnection using cli script
+  - graphical use interface for easy interaction
+  - preview button to open the generated script instantly
+  - raise exception for invalid input
+```
 
 ## Snapshot
 - `setup.py`
