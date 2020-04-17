@@ -88,6 +88,7 @@ class Ui_DBConnectionGen(object):
         self.generate.setFlat(False)
         self.generate.setObjectName("generate")
         self.gridLayout.addWidget(self.generate, 5, 0, 1, 1)
+        self.generate.clicked.connect(self.changetext)
         self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Bebas")
@@ -145,6 +146,8 @@ class Ui_DBConnectionGen(object):
         self.preview.setText(_translate("DBConnectionGen", "Preview"))
         self.label_4.setText(_translate("DBConnectionGen", "Password"))
 
+    def changetext(self):
+        self.label.setText('hello')
 
 if __name__ == "__main__":
     import sys
@@ -154,4 +157,3 @@ if __name__ == "__main__":
     ui.setupUi(DBConnectionGen)
     DBConnectionGen.show()
     sys.exit(app.exec_())
-
