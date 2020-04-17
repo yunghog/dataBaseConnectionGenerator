@@ -147,17 +147,23 @@ class Ui_DBConnectionGen(object):
         self.preview.setText(_translate("DBConnectionGen", "Preview"))
         self.label_4.setText(_translate("DBConnectionGen", "Password"))
 
-    def changetext(self):
-        self.label.setText('hello')
+
     def dbConPreview(self):
-        self.preview_text.setText(d.uiPrev())
+        format=self.extention.currentText()
+        self.preview_text.setText(d.uiPrev(format))
     def dbGenUi(self):
         format = self.extention.currentText()
         dbServer = self.server.text()
         dbName = self.database.text()
         dbUser = self.username.text()
         dbPswd = self.password.text()
-        self.preview_text.setText(d.gen(format,dbServer,dbName,dbPswd,dbName))
+        if d.validate(format,dbServer,dbName,dbPswd,dbName) == True:
+            self.preview_text.setText(d.gen(format,dbServer,dbName,dbPswd,dbName))
+        else:
+            msg = QtWidgets.QMessageBox()
+            msg.setWindowTitle("Error!")
+            msg.setText("Fields cannot be empty")
+            x = msg.exec_()  # this will show our messagebox
 
 if __name__ == "__main__":
     import sys

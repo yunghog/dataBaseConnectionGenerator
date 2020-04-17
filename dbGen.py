@@ -40,6 +40,18 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
         return 'Success'
     else:
         return 'Failed'
-def uiPrev():
-    conFile=open('dbConnect.php','r')
-    return conFile.read()
+def uiPrev(format):
+    try:
+        if format=='php':
+            conFile=open('dbConnect.php','r')
+        elif format=='js':
+            conFile=open('dbConnect.js','r')
+        return conFile.read()
+    except FileNotFoundError as e:
+        return str(e)
+
+def validate(format,dbServer,dbUser,dbPswd,dbName):
+    if dbServer=='' or dbUser=='' or dbPswd=='' or dbName=='' :
+        return False
+    else:
+        return True
