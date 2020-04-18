@@ -34,8 +34,8 @@ except ImportError as e:
             print(e)
             print('Unable to install PyQt5. Try later manually')
             flag=0
-        else:
-            flag=0
+    else:
+        flag=0
 if flag==0:
     print('Unable to DB-Connect')
     print(':::::Setup Failed:::::')
