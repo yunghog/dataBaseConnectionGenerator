@@ -5,7 +5,7 @@
 # Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import webbrowser
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Dialog(object):
@@ -103,12 +103,14 @@ class Ui_Dialog(object):
         self.github = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.github.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.github.setObjectName("github")
+        self.github.clicked.connect(self.opengithub)
         self.horizontalLayout.addWidget(self.github)
         self.insta = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.insta.setEnabled(True)
         self.insta.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.insta.setMouseTracking(False)
         self.insta.setObjectName("insta")
+        self.insta.clicked.connect(self.openinsta)
         self.horizontalLayout.addWidget(self.insta)
         self.label_3 = QtWidgets.QLabel(Dialog)
         self.label_3.setGeometry(QtCore.QRect(200, 126, 121, 20))
@@ -130,7 +132,10 @@ class Ui_Dialog(object):
         self.github.setText(_translate("Dialog", "Github"))
         self.insta.setText(_translate("Dialog", "Instagram"))
         self.label_3.setText(_translate("Dialog", "Developer & Designer"))
-
+    def opengithub(self):
+        webbrowser.open('https://github.com/yunghog')
+    def openinsta(self):
+        webbrowser.open('https://www.instagram.com/samartha__')
 
 if __name__ == "__main__":
     import sys
