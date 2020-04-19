@@ -85,6 +85,9 @@ python dbGenGui.py
 - `dbGenGui.py`
 <img src="image/gui.PNG" title="db-connect" alt="db-connect" size="70">
 
+- `about.py`
+<img src="image/snap2.PNG" title="db-connect" alt="db-connect" size="70">
+
 ## Support
 - This section will be updated soon
 
