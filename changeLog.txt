@@ -3,3 +3,8 @@
   - graphical use interface for easy interaction
   - preview button to open the generated script instantly
   - raise exception for invalid input
+
+# dataBaseConnectionGenerator v1.1
+  - added about window
+  - dark theme for GUI
+  - preview section format

@@ -131,3 +131,12 @@ class Ui_Dialog(object):
         self.insta.setText(_translate("Dialog", "Instagram"))
         self.label_3.setText(_translate("Dialog", "Developer & Designer"))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    about = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(about)
+    about.show()
+    sys.exit(app.exec_())

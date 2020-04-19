@@ -1,13 +1,13 @@
 <a href=""><img src="image/banner.jpg" title="db-connect" alt="db-connect"></a>
 
 # dataBaseConnectionGenerator
-`stable build v1.0`
+`stable build v1.1`
 ### DB-Connect
 > Generate Database connection for your project with no effort
 
 > Graphical User Interface for easy usage
 
-[![Build Status](https://img.shields.io/badge/version-v1.3-green?style=flat-square)](https://github.com/yunghog/dataBaseConnectionGenerator)
+[![Build Status](https://img.shields.io/badge/version-v1.1-green?style=flat-square)](https://github.com/yunghog/dataBaseConnectionGenerator)
 [![Python](https://img.shields.io/badge/python-3.7-orange?style=flat-square&logo=python)](https://github.com/yunghog/dataBaseConnectionGenerator)
 [![Python](https://img.shields.io/badge/pyqt-5.x-yellow?style=flat-square&logo=python)](https://github.com/yunghog/dataBaseConnectionGenerator)
 
@@ -62,6 +62,7 @@ python dbGenCli.py
 python dbGenGui.py
 ```
 - Fill the fields and hit `generate` button to generate DBConnection
+- Click on `preview` button to preview the code
 
 ## ChangeLog
 ```shell
@@ -70,6 +71,11 @@ python dbGenGui.py
   - graphical use interface for easy interaction
   - preview button to open the generated script instantly
   - raise exception for invalid input
+
+  # dataBaseConnectionGenerator v1.1
+    - added about window
+    - dark theme for GUI
+    - preview section format
 ```
 
 ## Snapshot

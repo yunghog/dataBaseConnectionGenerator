@@ -6,9 +6,15 @@
 #
 # WARNING! All changes made in this file will be lost!
 import dbGen as d
+from about import Ui_Dialog
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_DBConnectionGen(object):
+    def openAbout(self):
+        self.aboutWindow = QtWidgets.QDialog()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.aboutWindow)
+        self.aboutWindow.show()
     def setupUi(self, DBConnectionGen):
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
@@ -90,7 +96,7 @@ class Ui_DBConnectionGen(object):
         self.preview_text = QtWidgets.QTextBrowser(self.centralwidget)
         self.preview_text.setGeometry(QtCore.QRect(15, 350, 471, 221))
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setPointSize(8)
         self.preview_text.setFont(font)
         self.preview_text.setObjectName("preview_text")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -201,7 +207,7 @@ class Ui_DBConnectionGen(object):
         self.preview_text.setHtml(_translate("DBConnectionGen", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.extention.setItemText(0, _translate("DBConnectionGen", "js"))
         self.extention.setItemText(1, _translate("DBConnectionGen", "php"))
@@ -215,6 +221,7 @@ class Ui_DBConnectionGen(object):
 
 
     def dbConPreview(self):
+        self.openAbout()
         format=self.extention.currentText()
         self.preview_text.setText(d.uiPrev(format))
     def dbGenUi(self):
