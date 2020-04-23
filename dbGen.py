@@ -22,13 +22,13 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
     elif format=='php':
         dbCon = open(r'dbConnect.php','w')
         dbCon.write("<?php\n")
-        host="$servername = '" + dbServer + "';\n"
+        host="$servername = \"" + dbServer + "\";\n"
         dbCon.write(host)
-        dbUser="$username = '" + dbUser + "';\n"
+        dbUser="$username = \"" + dbUser + "\";\n"
         dbCon.write(dbUser)
-        dbName="$dbname = '" + dbName + "';\n"
+        dbName="$dbname = \"" + dbName + "\";\n"
         dbCon.write(dbName)
-        dbPswd="$password = '" + dbPswd + "';\n"
+        dbPswd="$password = \"" + dbPswd + "\";\n"
         dbCon.write(dbPswd)
         dbCon.write("$conn = new mysqli($servername,$username,$password,$dbname);\n")
         dbCon.write("if ($conn->connect_error) {\n")
