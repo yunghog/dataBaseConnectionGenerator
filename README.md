@@ -41,7 +41,7 @@ git clone https://github.com/yunghog/dataBaseConnectionGenerator.git
 ```
 - open the cloned directory
 - run `setup.py` using command
-```pythonn
+```python
 python setup.py
 ```
 ## Features

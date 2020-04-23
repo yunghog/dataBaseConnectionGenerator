@@ -11,7 +11,7 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
         dbCon.write(host)
         dbUser="user: \"" + dbUser + "\",\n"
         dbCon.write(dbUser)
-        dbPswd="passsword: \"" + dbPswd + "\",\n"
+        dbPswd="password: \"" + dbPswd + "\",\n"
         dbCon.write(dbPswd)
         dbCon.write("})")
         dbCon.write("con.connect(function(err)){\n")
@@ -28,9 +28,9 @@ def gen(format,dbServer,dbUser,dbPswd,dbName):
         dbCon.write(dbUser)
         dbName="$dbname = '" + dbName + "';\n"
         dbCon.write(dbName)
-        dbPswd="$passsword = '" + dbPswd + "';\n"
+        dbPswd="$password = '" + dbPswd + "';\n"
         dbCon.write(dbPswd)
-        dbCon.write("$conn = new mysqli($servername,$username,$passsword,$dbname);\n")
+        dbCon.write("$conn = new mysqli($servername,$username,$password,$dbname);\n")
         dbCon.write("if ($conn->connect_error) {\n")
         dbCon.write(" die('Connection failed: ' . $conn->connect_error);\n")
         dbCon.write("}\n")
